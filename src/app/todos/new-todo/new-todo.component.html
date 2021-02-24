@@ -1,0 +1,21 @@
+<p-dialog
+  header="New To-do"
+  [(visible)]="displayModal"
+  [modal]="true"
+  [style]="{ width: '400px' }"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  (onHide)="clearInputs()"
+>
+<br>
+<span class="p-float-label">
+    <input id="float-input" type="text" pInputText [(ngModel)]="title"> 
+    <label for="float-input">Title</label>
+</span>
+<br>
+<textarea pInputTextarea [(ngModel)]="description" [cols]="44"></textarea>
+  <ng-template pTemplate="footer">
+    <p-button label="Create" (click)="onCreateTodo()"></p-button>
+  </ng-template>
+</p-dialog>

@@ -1,0 +1,39 @@
+<p-dialog
+  header=""
+  [(visible)]="displayModal"
+  [modal]="true"
+  [style]="{ width: '400px' }"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  *ngIf="todo"
+  (onHide)="navigateBack()"
+>
+  <br />
+  <span class="p-float-label">
+    <input id="float-input" type="text" pInputText [(ngModel)]="title" />
+    <label for="float-input">Title</label>
+  </span>
+  <br />
+  <br />
+  <span class="p-float-label">
+    <textarea
+      id="description-label"
+      pInputTextarea
+      [(ngModel)]="description"
+      autoResize="autoResize"
+      [cols]="44"
+    ></textarea>
+    <label for="description-label">Description</label>
+  </span>
+  <ng-template pTemplate="footer">
+    <button
+      pButton
+      type="button"
+      label="Delete"
+      class="p-button-danger"
+      (click)="onDeleteTodo()"
+    ></button>
+    <p-button label="Update" (click)="onUpdateTodo()"></p-button>
+  </ng-template>
+</p-dialog>

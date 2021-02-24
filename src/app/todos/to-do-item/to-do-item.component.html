@@ -1,0 +1,27 @@
+<div
+  *ngIf="todo"
+  class="todo-item-wrapper"
+  pDraggable="todo-item"
+  (onDragStart)="dragStart(todo)"
+  (onDragEnd)="dragEnd()"
+  (click)="onModify(todo)"
+>
+  <h2 class="to-do-title">
+    {{ todo.title }}
+  </h2>
+  <p class="to-do-description">
+    {{ todo.description }}
+  </p>
+  <p class="to-do-created-date">
+    {{ todo.dateCreated }}
+  </p>
+  <!-- <div class="product-list-detail">
+        <h5 class="p-mb-2">NAME</h5>
+        <i class="pi pi-tag product-category-icon"></i>
+        <span class="product-category">CAtegory</span>
+    </div>
+    <div class="product-list-action">
+        <h6 class="p-mb-2">price</h6>
+        <span class="'product-badge">status</span>
+    </div> -->
+</div>

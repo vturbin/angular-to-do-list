@@ -1,0 +1,18 @@
+<div class="todo-list-wrapper">
+  <div class="todo-list-header">
+    <h1>TO DO</h1>
+  </div>
+  <div
+    class="todo-list-items drag-column"
+    pDroppable="todo-item"
+    (onDrop)="drop()"
+  >
+    <div *ngFor="let todo of todos">
+      <to-do-item [todo]="todo"></to-do-item>
+    </div>
+    <div class="new-todo" (click)="onCreateToDo($event)">
+      <i class="pi pi-plus"></i>
+      <p>CREATE NEW</p>
+    </div>
+  </div>
+</div>

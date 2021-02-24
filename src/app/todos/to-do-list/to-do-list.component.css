@@ -1,0 +1,22 @@
+.new-todo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: white;
+  box-shadow: 1px 1px 5px rgba(5, 5, 5, 0.534);
+  border-radius: 6px;
+  height: 50px;
+  margin-top: 5px;
+}
+
+.new-todo:hover {
+    cursor: pointer;
+}
+
+.new-todo p {
+    padding-left: 5px;
+    display: block;
+}

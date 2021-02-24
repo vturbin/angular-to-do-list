@@ -1,0 +1,9 @@
+<div class="p-grid">
+    <app-to-do-list
+      class="p-col"
+      (eventClicked)="onNewTodo($event)"
+    ></app-to-do-list>
+    <done-list class="p-col"></done-list>
+  </div>
+  <new-todo-modal [displayModal]="newTodo"></new-todo-modal>
+  <router-outlet></router-outlet>

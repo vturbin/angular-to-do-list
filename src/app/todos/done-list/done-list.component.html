@@ -1,0 +1,14 @@
+<div class="todo-list-wrapper">
+  <div class="todo-list-header">
+    <h1>DONE</h1>
+  </div>
+  <div
+    class="todo-list-items drag-column"
+    pDroppable="todo-item"
+    (onDrop)="drop()"
+  >
+    <div *ngFor="let todo of doneList">
+      <to-do-item [todo]="todo"></to-do-item>
+    </div>
+  </div>
+</div>

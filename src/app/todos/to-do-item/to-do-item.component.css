@@ -1,0 +1,49 @@
+
+
+.todo-item-wrapper {
+	display: flex;
+	align-items: flex-start;
+    flex-direction: column;
+	padding: .5rem;
+    width: 100%;
+    background-color: white;
+    box-shadow: 1px 1px 5px rgba(5, 5, 5, 0.534);
+    border-radius: 6px;
+    margin-bottom: 5px;
+}
+
+
+.to-do-title {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.to-do-description {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+.to-do-created-date{
+    font-size: 0.8em;
+}
+
+[pDraggable] {
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 576px) {
+    .todo-item-wrapper {
+        flex-wrap: wrap;
+    }
+    .todo-item-wrapper .image-container {
+        width: 100%;
+        text-align: center;
+    }
+
+    .todo-item-wrapper img {
+        margin: 0 0 1rem 0;
+        width: 100px;
+    }
+}
