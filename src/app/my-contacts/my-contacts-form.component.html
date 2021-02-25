@@ -174,19 +174,32 @@
               aria-describedby="email-help"
               #email="ngModel"
             />
-            <small *ngIf="!email.valid && email.touched" id="email-help" class="p-error">Email is not valid.</small>
+            <small
+              *ngIf="!email.valid && email.touched"
+              id="email-help"
+              class="p-error"
+              >Email is not valid.</small
+            >
           </div>
         </div>
       </div>
-      <button
-        pButton
-        type="button"
-        label="Cancel"
-        icon="pi pi-times"
-        class="p-button-text"
-        (click)="showForm = false"
-      ></button>
-      <p-button [disabled]="!f.valid" label="Submit" type="submit"></p-button>
+      <div class="p-d-flex p-jc-end">
+        <button
+          pButton
+          type="button"
+          label="Cancel"
+          icon="pi pi-times"
+          class="p-button-text"
+          (click)="showForm = false"
+        ></button>
+        <p-button [disabled]="!f.valid" label="Submit" type="submit"></p-button>
+      </div>
     </form>
   </p-dialog>
+</div>
+<div class="p-d-flex p-flex-column p-p-3 card">
+<app-contact-card
+[contact]="contact"
+*ngFor="let contact of contacts"
+></app-contact-card>
 </div>

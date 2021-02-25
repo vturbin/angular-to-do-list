@@ -52,3 +52,6 @@
   transform: translateY(1px);
 }
 
+app-contact-card {
+  margin-bottom: 10px;
+}

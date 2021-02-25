@@ -1,0 +1,16 @@
+<p-card
+  header="{{ contact.firstname }} {{ contact.lastname }}"
+>
+  <ng-template pTemplate="header"> </ng-template>
+  <div style="width: 50%; margin: 0; display: inline-block;">
+    <h4>Address</h4>
+    <p>{{ contact.city }}</p>
+    <p>{{ contact.address }}</p>
+    <p>{{ contact.postalCode }}</p>
+  </div>
+  <div style="width: 50%;  margin: 0;  display: inline-block;">
+    <h4>Contact data</h4>
+    <p>{{ contact.phone }}</p>
+    <p>{{ contact.email }}</p>
+  </div>
+</p-card>

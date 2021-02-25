@@ -20,6 +20,8 @@ import { TodosComponent } from './todos/todos.component';
 import { AppRoutingModule } from './app-routing.module';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {DropdownModule} from 'primeng/dropdown';
+import {CardModule} from 'primeng/card';
+import { ContactCardComponent } from './my-contacts/contact-card/contact-card.component';
 
 
 
@@ -33,7 +35,8 @@ import {DropdownModule} from 'primeng/dropdown';
     NewTodoComponent,
     EditTodoComponent,
     MyContactsFormComponent,
-    TodosComponent
+    TodosComponent,
+    ContactCardComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import {DropdownModule} from 'primeng/dropdown';
     InputTextareaModule,
     AppRoutingModule,
     RadioButtonModule,
-    DropdownModule
+    DropdownModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

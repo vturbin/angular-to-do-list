@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ContactForm } from './contact-form.model';
+import { Subscription } from 'rxjs';
+import { Contact } from './contact-form.model';
+import { ContactsService } from './contacts.service';
 
 interface MaritalStatus {
   status: string
@@ -12,7 +14,7 @@ interface MaritalStatus {
   styleUrls: ['./my-contacts-form.component.css']
 })
 
-export class MyContactsFormComponent implements OnInit {
+export class MyContactsFormComponent implements OnInit,OnDestroy {
 
   @ViewChild('f', { static: false }) contactForm: NgForm;
   showForm: boolean = false;
@@ -20,10 +22,11 @@ export class MyContactsFormComponent implements OnInit {
   maritalStatus: MaritalStatus[];
   selectedMaritalStatus: MaritalStatus;
   gender: string;
-  submittedContact: ContactForm;
+  contacts: Contact[];
+  private contactSub: Subscription;
 
 
-  constructor() { 
+  constructor(private contactService: ContactsService) { 
     this.maritalStatus = [
       {status: 'Married'},
       {status: 'Single'},
@@ -34,6 +37,10 @@ export class MyContactsFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.contacts = this.contactService.getContacts();
+    this.contactSub = this.contactService.contactsChanged.subscribe((contacts: Contact[])=>{
+      this.contacts = contacts;
+    })
   }
 
   onCreateNewContact() {
@@ -41,13 +48,20 @@ export class MyContactsFormComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    this.submittedContact = form.value;
-    this.submittedContact.maritalStatus = form.value.maritalStatus.status
+    const newContact: Contact = form.value;
+    newContact.maritalStatus = form.value.maritalStatus.status
+    console.log(newContact)
+    this.contactService.addNewContact(newContact);
+    this.showForm =false;
   }
 
   clearInputs() {
     this.contactForm.reset();
     this.contactForm.form.patchValue({maritalStatus: this.maritalStatus[1]})
+  }
+
+  ngOnDestroy(): void {
+    this.contactSub.unsubscribe();
   }
 
 }
