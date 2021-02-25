@@ -15,9 +15,12 @@ import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import { EditTodoComponent } from './todos/edit-todo/edit-todo.component';
-import { MyDataFormComponent } from './my-data-form/my-data-form.component';
+import { MyContactsFormComponent } from './my-contacts/my-contacts-form.component';
 import { TodosComponent } from './todos/todos.component';
 import { AppRoutingModule } from './app-routing.module';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import {DropdownModule} from 'primeng/dropdown';
+
 
 
 @NgModule({
@@ -29,7 +32,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppHeaderComponent,
     NewTodoComponent,
     EditTodoComponent,
-    MyDataFormComponent,
+    MyContactsFormComponent,
     TodosComponent
   ],
   imports: [
@@ -42,7 +45,9 @@ import { AppRoutingModule } from './app-routing.module';
     ButtonModule,
     InputTextModule,
     InputTextareaModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RadioButtonModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

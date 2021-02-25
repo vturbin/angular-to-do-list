@@ -15,7 +15,7 @@ export class AppHeaderComponent implements OnInit {
   ngOnInit(): void {
         this.items = [
             {label: 'Todos', icon: 'pi pi-fw pi-home',routerLink: ["/todos"]},
-            {label: 'My Data', icon: 'pi pi-fw pi-calendar',routerLink: ['/my-data']},
+            {label: 'My Contacts', icon: 'pi pi-fw pi-calendar',routerLink: ['/my-contacts']},
         ];
   }
 

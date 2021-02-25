@@ -22,7 +22,6 @@ export class ToDoService {
   private doneList: Todo[] = [];
 
   getTodos() {
-    console.log(this.todos);
     return this.todos;
   }
 

@@ -1,0 +1,14 @@
+.p-field-checkbox, .p-field-radiobutton {
+    margin-bottom: 0;
+  }
+
+  .p-formgroup-inline {
+      align-items: center;
+      margin-left: 5px;
+  }
+
+  /* p-dropdown {
+      position: absolute;
+      z-index: 10000000;
+      height: 39px;
+  } */
