@@ -1,0 +1,180 @@
+<div class="p-d-flex p-p-3 card">
+  <button
+    pButton
+    type="button"
+    label="Create new"
+    class="p-button-outlined"
+    (click)="onCreateNewContact()"
+  ></button>
+
+  <p-dialog
+    header=""
+    [(visible)]="showForm"
+    [modal]="true"
+    [style]="{ width: '600px' }"
+    [baseZIndex]="10000"
+    [draggable]="false"
+    [resizable]="false"
+    (onHide)="clearInputs()"
+  >
+    <form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
+      <div class="p-fluid">
+        <div class="p-field p-grid">
+          <label for="firstname" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+            >Firstname</label
+          >
+          <div class="p-col-12 p-md-10">
+            <input
+              id="firstname"
+              type="text"
+              pInputText
+              formControlName="firstname"
+            />
+          </div>
+        </div>
+        <div class="p-field p-grid">
+          <label for="lastname" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+            >Lastname</label
+          >
+          <div class="p-col-12 p-md-10">
+            <input
+              id="lastname"
+              type="text"
+              pInputText
+              formControlName="lastname"
+            />
+          </div>
+        </div>
+        <div class="p-field p-grid" name="gender">
+          <label for="gender" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+            >Gender</label
+          >
+          <div class="p-formgroup-inline" name="gender">
+            <div class="p-field-checkbox">
+              <p-radioButton
+                value="Male"
+                inputId="male"
+                formControlName="gender"
+              ></p-radioButton>
+              <label for="male">Male</label>
+            </div>
+            <div class="p-field-checkbox">
+              <p-radioButton
+                formControlName="gender"
+                value="Female"
+                inputId="Female"
+              ></p-radioButton>
+              <label for="female">Female</label>
+            </div>
+            <div class="p-field-checkbox">
+              <p-radioButton
+                formControlName="gender"
+                value="Other"
+                inputId="other"
+              ></p-radioButton>
+              <label for="other">Other</label>
+            </div>
+          </div>
+        </div>
+        <div class="p-field p-grid">
+          <label for="marital" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+            >Marital Status</label
+          >
+          <div class="p-col-8 p-md-4" style="height: 39px">
+            <p-dropdown
+              [options]="maritalStatus"
+              optionLabel="status"
+              autoZindex="true"
+              formControlName="maritalStatus"
+            ></p-dropdown>
+          </div>
+        </div>
+        <div class="p-field p-grid">
+          <label for="city" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+            >City</label
+          >
+          <div class="p-col-12 p-md-10">
+            <input id="city" formControlName="city" type="text" pInputText />
+          </div>
+        </div>
+      </div>
+      <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col-8">
+          <label for="address">Address</label>
+          <input
+            id="address"
+            formControlName="address"
+            type="text"
+            pInputText
+          />
+        </div>
+        <div class="p-field p-col-4">
+          <label for="postal-code">Zip Code</label>
+          <input
+            id="postal-code"
+            formControlName="postalCode"
+            type="text"
+            pInputText
+          />
+        </div>
+      </div>
+
+      <div class="p-fluid">
+        <div class="p-field p-grid">
+          <label for="phone" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+            >Phone Number</label
+          >
+          <div class="p-col-12 p-md-10">
+            <input id="phone" type="text" pInputText formControlName="phone" />
+          </div>
+        </div>
+        <div class="p-field p-grid">
+          <label for="email" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+            >E-Mail</label
+          >
+          <div class="p-col-12 p-md-10">
+            <input
+              id="email"
+              type="email"
+              pInputText
+              formControlName="email"
+              required
+              email
+              aria-describedby="email-help"
+            />
+            <small
+              id="email-help"
+              class="p-error"
+              *ngIf="
+                !contactForm.get('email').valid &&
+                contactForm.get('email').touched
+              "
+              >Email is not valid.</small
+            >
+          </div>
+        </div>
+      </div>
+      <div class="p-d-flex p-jc-end">
+        <button
+          pButton
+          type="button"
+          label="Cancel"
+          icon="pi pi-times"
+          class="p-button-text"
+          (click)="showForm = false"
+        ></button>
+        <p-button
+          [disabled]="!contactForm.valid"
+          label="Submit"
+          type="submit"
+        ></p-button>
+      </div>
+    </form>
+  </p-dialog>
+</div>
+<div class="p-d-flex p-flex-column p-p-3 card">
+  <app-contact-card
+    [contact]="contact"
+    *ngFor="let contact of contacts"
+  ></app-contact-card>
+</div>

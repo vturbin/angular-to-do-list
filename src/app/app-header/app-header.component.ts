@@ -16,6 +16,7 @@ export class AppHeaderComponent implements OnInit {
         this.items = [
             {label: 'Todos', icon: 'pi pi-fw pi-home',routerLink: ["/todos"]},
             {label: 'My Contacts', icon: 'pi pi-fw pi-calendar',routerLink: ['/my-contacts']},
+            {label: 'Reactive form', icon: 'pi pi-fw pi-calendar',routerLink: ['/reactive-form']},
         ];
   }
 

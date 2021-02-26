@@ -22,7 +22,8 @@ import {RadioButtonModule} from 'primeng/radiobutton';
 import {DropdownModule} from 'primeng/dropdown';
 import {CardModule} from 'primeng/card';
 import { ContactCardComponent } from './my-contacts/contact-card/contact-card.component';
-
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { ContactCardComponent } from './my-contacts/contact-card/contact-card.co
     EditTodoComponent,
     MyContactsFormComponent,
     TodosComponent,
-    ContactCardComponent
+    ContactCardComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,8 @@ import { ContactCardComponent } from './my-contacts/contact-card/contact-card.co
     AppRoutingModule,
     RadioButtonModule,
     DropdownModule,
-    CardModule
+    CardModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

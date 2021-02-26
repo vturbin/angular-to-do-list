@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MyContactsFormComponent } from './my-contacts/my-contacts-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { EditTodoComponent } from './todos/edit-todo/edit-todo.component';
 import { TodosResolverService } from './todos/todos-resolver.service';
 import { TodosComponent } from './todos/todos.component';
@@ -8,6 +9,7 @@ import { TodosComponent } from './todos/todos.component';
 const appRoutes: Routes = [
   { path: '', redirectTo: '/todos', pathMatch: 'full' },
   { path: 'my-contacts', component: MyContactsFormComponent },
+  { path: 'reactive-form', component: ReactiveFormComponent },
   {
     path: 'todos',
     component: TodosComponent,

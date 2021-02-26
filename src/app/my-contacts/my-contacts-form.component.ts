@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { Contact } from './contact-form.model';
-import { ContactsService } from './contacts.service';
+import { Contact } from '../contact-form.model';
+import { ContactsService } from '../contacts.service';
 
 interface MaritalStatus {
   status: string
