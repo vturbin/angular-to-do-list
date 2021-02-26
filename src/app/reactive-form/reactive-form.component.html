@@ -175,6 +175,6 @@
 <div class="p-d-flex p-flex-column p-p-3 card">
   <app-contact-card
     [contact]="contact"
-    *ngFor="let contact of contacts"
+    *ngFor="let contact of contacts | sort:'firstname'"
   ></app-contact-card>
 </div>

@@ -24,6 +24,7 @@ import {CardModule} from 'primeng/card';
 import { ContactCardComponent } from './my-contacts/contact-card/contact-card.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { SortPipe } from './sort.pipe';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     MyContactsFormComponent,
     TodosComponent,
     ContactCardComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,
